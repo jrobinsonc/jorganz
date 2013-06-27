@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jOrganz - Basic example</title>
+        
+        <style type="text/css">
+        /*<![CDATA[*/
+
+        #container {
+            border: 1px solid #ccc;   
+        }
+        
+        #container div {
+            width: 250px; /* Required for jOrganz */
+            background-color: #ccc;
+            margin: 10px;
+        }
+
+        /*]]>*/
+        </style>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.jorganz.min.js"></script>
+        <script type="text/javascript">
+        //<![CDATA[
+        jQuery(function ($) {
+            $("#container").jOrganz();
+        });
+        //]]>
+        </script>
+    </head>
+    <body>
+        
+        <h1><a href="https://github.com/jrobinsonc/jorganz">jOrganz</a></h1>
+        
+        <p>
+            <strong>Basic example</strong> <br />
+            You can resize the window to view the adaptation.
+        </p>
+        
+        <p>For more info: <a href="https://github.com/jrobinsonc/jorganz">see project home</a>.</p>
+        
+        <div id="container">
+            <div style="height: 300px;"></div>
+            <div style="height: 250px;"></div>
+            <div style="height: 100px;"></div>
+            <div style="height: 400px;"></div>
+            <div style="height: 220px;"></div>
+            <div style="height: 150px;"></div>
+            <div style="height: 290px;"></div>
+            <div style="height: 120px;"></div>
+            <div style="height: 350px;"></div>
+            <div style="height: 110px;"></div>
+            <div style="height: 250px;"></div>
+            <div style="height: 190px;"></div>
+            <div style="height: 80px;"></div>
+        </div>
+        
+    </body>
+</html>
