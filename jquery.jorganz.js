@@ -1,7 +1,7 @@
-/*global jQuery, window*/
+/*global jQuery, window, alert*/
 
 /**
- * jOrganz v0.1
+ * jOrganz v0.2
  * Grid layout for html blocks.
  * https://github.com/jrobinsonc/jorganz
  * MIT License
@@ -28,7 +28,12 @@
                 items_margin = [parseInt($items.eq(0).css('margin-left'), 10) + parseInt($items.eq(0).css('margin-right'), 10), parseInt($items.eq(0).css('margin-top'), 10) + parseInt($items.eq(0).css('margin-bottom'), 10)],
                 last_row_max_items = row_max_items;
 
-            row_max_items = Math.floor($container.width() / items_width);
+            if (items_width === 0) {
+                alert('jOrganz error: You must set the items width.');
+                return;
+            }
+
+            row_max_items = Math.floor($container.width() / (items_width + items_margin[0]));
 
             if (row_max_items === last_row_max_items) { return; }
 
