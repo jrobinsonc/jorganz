@@ -50,3 +50,7 @@ http://jrobinsonc.github.io/jorganz/example-basic.html
 
 Responsive example  
 http://jrobinsonc.github.io/jorganz/example-responsive.html
+
+## License
+
+Licensed under the MIT license.
