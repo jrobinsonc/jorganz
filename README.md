@@ -53,4 +53,6 @@ http://jrobinsonc.github.io/jorganz/example-responsive.html
 
 ## License
 
-Licensed under the MIT license.
+Licensed under the [MIT licence][1].
+
+[1]: http://raw.github.com/jrobinsonc/jorganz/master/LICENSE
