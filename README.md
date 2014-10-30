@@ -17,9 +17,9 @@ Prepare items.
 
 ```html
 <div id="container">
-    <div style="height: 300px;"></div>
-    <div style="height: 250px;"></div>
-    <div style="height: 100px;"></div>
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
 </div>
 ```
 
@@ -35,7 +35,7 @@ Call the plugin.
 
 ```javascript
 <script type="text/javascript">
-jQuery(function ($) {
+jQuery(window).load(function($){
     $("#container").jOrganz();
 });
 </script>

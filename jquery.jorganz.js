@@ -1,7 +1,7 @@
 /*global jQuery, window, alert*/
 
 /**
- * jOrganz v0.2
+ * jOrganz v0.2.1
  * Grid layout for html blocks.
  * https://github.com/jrobinsonc/jorganz
  * MIT License
@@ -65,6 +65,22 @@
         }
 
         order_items();
+
+
+
+        var $images = $("img", $container),
+            loaded_images = 0,
+            num_images = $images.length;
+
+        $images.load(function() {
+            ++loaded_images;
+
+            if (loaded_images === num_images) {
+                order_items();
+            }
+        });
+
+
 
         $(window).resize(function () {
             order_items();
