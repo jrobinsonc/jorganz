@@ -1,7 +1,7 @@
 /*global jQuery, window, alert*/
 
 /**
- * jOrganz v0.2.1
+ * jOrganz v0.3.0
  * Grid layout for html blocks.
  * https://github.com/jrobinsonc/jorganz
  * MIT License
@@ -12,10 +12,14 @@
 
     "use strict";
 
-    $.fn.jOrganz = function () {
+    $.fn.jOrganz = function (user_options) {
+
+        var options = $.extend({
+            selector: "div"
+        }, user_options);
 
         var $container = $(this),
-            $items = $container.children('div'),
+            $items = $container.children(options.selector),
             row_max_items = 0;
 
         $container.css('position', 'relative');

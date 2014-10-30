@@ -17,9 +17,9 @@ With this jQuery plugin you can create Pinterest like layouts.
 
 ```html
 <div id="container">
-    <div style="height: 300px;"></div>
-    <div style="height: 250px;"></div>
-    <div style="height: 100px;"></div>
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
 </div>
 ```
 
@@ -34,9 +34,11 @@ With this jQuery plugin you can create Pinterest like layouts.
 **4. Call the plugin:**
 
 ```javascript
-<script type="text/javascript">
+<script>
 jQuery(window).load(function($){
-    $("#container").jOrganz();
+    $("#container").jOrganz({
+        selector: 'div'
+    });
 });
 </script>
 ```
