@@ -6,24 +6,24 @@ With this jQuery plugin you can create Pinterest like layouts.
 
 ## How to use
 
-Include jQuery and jOrganz plugin:
+**1. Include jQuery and jOrganz plugin:**
 
 ```html
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
 <script type="text/javascript" src="jquery.jorganz.min.js"></script>
 ```
 
-Prepare items.
+**2. Prepare items:**
 
 ```html
 <div id="container">
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
+    <div style="height: 300px;"></div>
+    <div style="height: 250px;"></div>
+    <div style="height: 100px;"></div>
 </div>
 ```
 
-Set items width through CSS.
+**3. Set items width through CSS:**
 
 ```css
 <style type="text/css">
@@ -31,7 +31,7 @@ Set items width through CSS.
 </style>
 ```
 
-Call the plugin.
+**4. Call the plugin:**
 
 ```javascript
 <script type="text/javascript">
@@ -41,7 +41,7 @@ jQuery(window).load(function($){
 </script>
 ```
 
-And enjoy.
+**5. And enjoy.**
 
 ## Demo
 
