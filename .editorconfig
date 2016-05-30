@@ -9,5 +9,5 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[{package.json,.jshintrc,.jscsrc}]
+[{package.json,.jshintrc,.jscsrc,.travis.yml}]
 indent_size = 2

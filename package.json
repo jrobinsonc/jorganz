@@ -11,6 +11,7 @@
     "grunt-jscs": "^2.8.0"
   },
   "scripts": {
+    "test": "grunt validate"
   },
   "repository": {
     "type": "git",
