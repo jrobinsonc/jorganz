@@ -1,82 +1,87 @@
-(function ($) {
-    "use strict";
+(function($) {
+    'use strict';
 
-    $.fn.jOrganz = function (user_options) {
+    $.fn.jOrganz = function(userOptions) {
 
         var options = $.extend({
-            selector: "div"
-        }, user_options);
+            selector: 'div'
+        }, userOptions);
 
-        var $container = $(this),
-            $items = $container.children(options.selector),
-            row_max_items = 0;
+        var $container = $(this);
+        var $items = $container.children(options.selector);
+        var rowMaxItems = 0;
 
         $container.css('position', 'relative');
         $items.css('position', 'absolute');
 
-        function order_items() {
-            var pos_top = [],
-                row_num = 0,
-                items_width = $items.eq(0).width(),
-                items_margin = [parseInt($items.eq(0).css('margin-left'), 10) + parseInt($items.eq(0).css('margin-right'), 10), parseInt($items.eq(0).css('margin-top'), 10) + parseInt($items.eq(0).css('margin-bottom'), 10)],
-                last_row_max_items = row_max_items;
+        function orderItems() {
+            var posTop = [];
+            var rowNum = 0;
 
-            if (items_width === 0) {
+            var itemsWidth = $items.eq(0).width();
+            var lastRowMaxItems = rowMaxItems;
+            var itemsMargin = [0, 0];
+
+            // Horizontal margin
+            itemsMargin[0] += parseInt($items.eq(0).css('margin-left'), 10);
+            itemsMargin[0] += parseInt($items.eq(0).css('margin-right'), 10);
+
+            // Vertical margin
+            itemsMargin[1] += parseInt($items.eq(0).css('margin-top'), 10);
+            itemsMargin[1] += parseInt($items.eq(0).css('margin-bottom'), 10);
+
+            if (itemsWidth === 0) {
                 alert('jOrganz error: You must set the items width.');
                 return;
             }
 
-            row_max_items = Math.floor($container.width() / (items_width + items_margin[0]));
+            rowMaxItems = Math.floor($container.width() / (itemsWidth + itemsMargin[0]));
 
-            if (row_max_items === last_row_max_items) { return; }
+            if (rowMaxItems === lastRowMaxItems) { return; }
 
-            $.each($items, function () {
+            $.each($items, function() {
 
                 var $item = $(this);
 
-                row_num += 1;
+                rowNum += 1;
 
-                if (row_num > row_max_items) {
-                    row_num = 1;
+                if (rowNum > rowMaxItems) {
+                    rowNum = 1;
                 }
 
-                if (pos_top[row_num - 1] === undefined) {
-                    pos_top[row_num - 1] = 0;
+                if (posTop[rowNum - 1] === undefined) {
+                    posTop[rowNum - 1] = 0;
                 }
 
                 $item.css({
-                    top: pos_top[row_num - 1],
-                    left: (items_width + items_margin[0]) * (row_num - 1)
+                    top: posTop[rowNum - 1],
+                    left: (itemsWidth + itemsMargin[0]) * (rowNum - 1)
                 });
 
-                pos_top[row_num - 1] += ($item.height() + items_margin[1]);
+                posTop[rowNum - 1] += ($item.height() + itemsMargin[1]);
 
-                if (pos_top[row_num - 1] > $container.height()) {
-                    $container.height(pos_top[row_num - 1]);
+                if (posTop[rowNum - 1] > $container.height()) {
+                    $container.height(posTop[rowNum - 1]);
                 }
             });
         }
 
-        order_items();
+        orderItems();
 
+        var $imagesList = $('img', $container);
+        var loadedImages = 0;
+        var numImages = $imagesList.length;
 
+        $imagesList.load(function() {
+            ++loadedImages;
 
-        var $images = $("img", $container),
-            loaded_images = 0,
-            num_images = $images.length;
-
-        $images.load(function() {
-            ++loaded_images;
-
-            if (loaded_images === num_images) {
-                order_items();
+            if (loadedImages === numImages) {
+                orderItems();
             }
         });
 
-
-
-        $(window).resize(function () {
-            order_items();
+        $(window).resize(function() {
+            orderItems();
         });
 
     };
