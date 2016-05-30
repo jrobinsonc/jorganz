@@ -1,21 +1,25 @@
 module.exports = function(grunt) {
+    "use strict";
+
+
+    grunt.option("filename", 'jquery.jorganz.js');
+
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
         jshint: {
-            all: {
-                src: [
-                    'src/jquery.jorganz.js',
-                ],
-                options: {
-                    jshintrc: true
-                }
-            }
+            options: {
+                jshintrc: true
+            },
+            all: [
+                "src/<%= grunt.option('filename') %>",
+            ]
         },
 
         uglify: {
             files: {
-                'dist/jquery.jorganz.min.js': ['src/jquery.jorganz.js']
+                "dist/<%= grunt.option('filename').replace('.js', '.min.js') %>": "src/<%= grunt.option('filename') %>",
             },
             options: {
                 banner: '/*! jOrganz v<%= pkg.version %> | ' +
