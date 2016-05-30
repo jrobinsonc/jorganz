@@ -1,15 +1,4 @@
-/*global jQuery, window, alert*/
-
-/**
- * jOrganz v0.3.0
- * Grid layout for html blocks.
- * https://github.com/jrobinsonc/jorganz
- * MIT License
- * by JoseRobinson.com
- */
-
 (function ($) {
-
     "use strict";
 
     $.fn.jOrganz = function (user_options) {

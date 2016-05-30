@@ -1,0 +1,25 @@
+{
+  "name": "jorganz",
+  "version": "0.3.0",
+  "description": "Grid layout for html blocks.",
+  "main": "dist/jquery.jorganz.min.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1"
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrobinsonc/jorganz.git"
+  },
+  "keywords": [
+  ],
+  "author": "Jose Robinson <jr@joserobinson.com> (http://joserobinson.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrobinsonc/jorganz/issues"
+  },
+  "homepage": "https://github.com/jrobinsonc/jorganz#readme"
+}
