@@ -1,15 +1,16 @@
 # jOrganz
 
-Grid layout for html blocks.
+Grid layout for html blocks. With this jQuery plugin you can create Pinterest like layouts.
 
-With this jQuery plugin you can create Pinterest like layouts.
+[![Build Status](https://travis-ci.org/jrobinsonc/jorganz.svg?branch=master)](https://travis-ci.org/jrobinsonc/jorganz)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 ## How to use
 
 **1. Include jQuery and jOrganz plugin:**
 
 ```html
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.jorganz.min.js"></script>
 ```
 
@@ -47,10 +48,10 @@ jQuery(window).load(function($){
 
 ## Demo
 
-Basic example  
+Basic example
 http://jrobinsonc.github.io/jorganz/example-basic.html
 
-Responsive example  
+Responsive example
 http://jrobinsonc.github.io/jorganz/example-responsive.html
 
 ## License
