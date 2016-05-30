@@ -2,6 +2,16 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        jshint: {
+            all: {
+                src: [
+                    'src/jquery.jorganz.js',
+                ],
+                options: {
+                    jshintrc: true
+                }
+            }
+        },
 
         uglify: {
             files: {
@@ -31,5 +41,12 @@ module.exports = function(grunt) {
         },
     });
 
+
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+
+
+    grunt.registerTask('dist', ['jshint:all', 'uglify:dist']);
+    grunt.registerTask('dev', ['jshint:all', 'uglify:dev']);
+    grunt.registerTask('default', ['dev']);
 }
