@@ -48,10 +48,10 @@ jQuery(window).load(function($){
 
 ## Demo
 
-Basic example
+Basic example:    
 http://jrobinsonc.github.io/jorganz/example-basic.html
 
-Responsive example
+Responsive example:    
 http://jrobinsonc.github.io/jorganz/example-responsive.html
 
 ## License
